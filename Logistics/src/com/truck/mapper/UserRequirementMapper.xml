@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.truck.dao.IUserRequirementDao">
+	<select id="selectByPrimaryKey"  parameterType="int" resultMap="UserRequirementMap">
+		select r_id, r_origin, r_destination, r_departuretime, r_cost, r_u_id, r_c_id from t_requirement where r_id=#{id}
+	</select>
+	<resultMap id="UserRequirementMap" type="UserRequirementBean">
+		<id property="id"  column="r_id" ></id>
+		<result property="origin" column="r_origin" />
+		<result property="destination" column="r_destination" /> 
+		<result property="departureTime" column="r_departuretime" /> 
+		<result property="cost" column="r_cost" /> 
+		<association property="userBean" column="r_u_id" select="com.truck.dao.IUserDao.selectUserById" fetchType="lazy"/>
+		<association property="carTypeBean" column="r_c_id" select="com.truck.dao.ICarTypeDao.selectById" fetchType="lazy"/>
+		<collection property="manifestBeans" ofType="ManifestBean">
+			
+		</collection>
+	</resultMap>
+	
+</mapper>

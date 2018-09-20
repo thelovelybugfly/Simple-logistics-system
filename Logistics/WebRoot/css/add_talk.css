@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+ html,body{
+        width: 100%;
+        margin:0;
+    }
+    #head{
+        width: 100%;
+        height: 80px;
+        background-color: rgb(151, 116, 255);
+        position:fixed;
+        left:0;
+        top:0;
+        color: #ffffff;
+        font-size: 15px;
+        line-height: 80px;
+        border-bottom: solid 1px blue;
+    }
+    #logo{
+        width: 80px;
+        height: 78px;
+        margin-left: 100px;
+        /*border: solid 1px red;*/
+        float: left;
+    }
+    #option{
+        width: 55%;
+        height: 80px;
+        /*background-color: #8d87ff;*/
+        /*margin-right: 10%;*/
+        float: right;
+    }
+    .option1{
+        /*margin-left: 50px;*/
+        width: 80px;
+        float: left;
+        text-align: center;
+    }
+    #option a:link,#option a:active{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    #option a:hover{
+        font-size: 20px;
+    }
+#main{
+    width: 100%;
+    height: 550px;
+    margin-top: 80px;
+    background-color: #d3e2ff;
+}
+    #show_title{
+        width: 150px;
+        height: 40px;
+        border: solid 0px #ff1b40;
+        margin-left:620px;
+        font-size: 30px;
+    }
+    #show_context{
+        width: 800px;
+        height: 400px;
+        border: solid 2px blue;
+        margin-left: 300px;
+    }
+    #title{
+        width: 100px;
+        height: 30px;
+        margin-top: 10px;
+        border: solid 0px red;
+        float: left;
+    }
+    #input_context{
+         width: 400px;
+        height: 200px;
+        margin-top: 10px;
+        margin-left: 10px;
+        float: left;
+        font-size: 20px;
+    }
+    #submit{
+        margin-top:220px;
+        margin-left: -80px;
+
+    }
+
+    #footer{
+        width: 100%;
+        height: 80px;
+        background-color: #9774ff;
+        color: #ffffff;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        font-size: 12px;
+
+        /*line-height: 100px;*/
+    }
+    .about{
+        /*text-align: left;*/
+        /*margin: 0 auto;*/
+    }

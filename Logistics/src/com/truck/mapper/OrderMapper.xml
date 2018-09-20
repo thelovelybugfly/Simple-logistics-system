@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.truck.dao.IOrderDao">
+	
+	<!-- <select id="selectOrderByUidAndStatus" parameterType="int" resultType="OrderBean">
+		select o_id as id,o_time as time,o_r_id as userRequirementBean,o_d_id as driverBean,
+		o_ordernumber as orderNumber, o_status as status from t_order where o_status=#{status} and o_d_id=#{d_id};
+	</select> -->
+	<select id="selectOrderByUidAndStatus" parameterType="int" resultMap="OrderMap">
+		select * from t_order where o_status=#{status} and u_id=#{u_id};
+	</select>
+	
+	<select id="selectOrderByUidAndStatusAndUser" parameterType="int" resultMap="OrderMap">
+		select * from t_order where o_status>0  and u_id=#{u_id};
+	</select>
+	
+	<resultMap type="OrderBean" id="OrderMap">
+		<id property="id" column="o_id"/>
+		<result property="time" column="o_time"/>
+		<result property="orderNumber" column="o_ordernumber"/>
+		<result property="status" column="o_status"/>
+		
+		<association property="driverBean"  column="u_id" select="com.truck.dao.IUserDao.selectUserById"></association>
+		<association property="userRequirementBean" column="o_r_id" select="com.truck.dao.IUserRequirementDao.selectByPrimaryKey"></association>
+		
+	</resultMap>
+</mapper>
+

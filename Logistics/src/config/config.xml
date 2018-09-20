@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- log4j -->
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+		<!-- 打开延迟加载的开关 -->
+	    <setting name="lazyLoadingEnabled" value="true"/>
+	    <!-- 当开启时，任何方法的调用都会加载该对象的所有属性。否则，每个属性会按需加载-->
+	    <setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	<!-- 别名 -->	
+	<typeAliases>
+		<typeAlias alias="UserBean" type="com.truck.bean.UserBean"/>
+		<!-- <typeAlias alias="DriverBean" type="com.truck.bean.DriverBean"/> -->
+		<typeAlias alias="TruckBean" type="com.truck.bean.TruckBean"/>
+		<typeAlias alias="CredentialsBean" type="com.truck.bean.CredentialsBean"/>
+		<typeAlias alias="CarTypeBean" type="com.truck.bean.CarTypeBean"/>
+		<typeAlias alias="GPSBean" type="com.truck.bean.GPSBean"/>
+        <typeAlias alias="ManifestBean" type="com.truck.bean.ManifestBean"/>
+        <typeAlias alias="UserRequirementBean" type="com.truck.bean.UserRequirementBean"/>
+        
+        <typeAlias alias="OrderBean" type="com.truck.bean.OrderBean"/>
+	</typeAliases>
+	
+	
+</configuration>
